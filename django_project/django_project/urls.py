@@ -22,12 +22,25 @@ Including another URLconf
 #     path('myapp/', include('myapp.urls')),
     
 # ]
+
 # mysite/urls.py
 
+# from django.urls import path
+# from myapp.views import task_list
+
+# urlpatterns = [
+#     path('tasks/', task_list, name='task_list'),
+# ]
+
+# mysite/urls.py
+
+from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
     path('myapp/', include('myapp.urls')),
-    # Add more paths as needed
+
 ]
+
 
